@@ -27,6 +27,10 @@ export interface IStrings extends LocalizedStringsMethods{
   familiarize: string;
   our_team: string;
   our_team_p_1: string;
+  workshop: string;
+  all_rights_reserved: string;
+  artists: string;
+  managers: string;
 }
 
 // Таблица перевода
@@ -60,6 +64,10 @@ let strings: IStrings;
       familiarize: 'Ознакомиться',
       our_team: "Наша команда",
       our_team_p_1: 'Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить значение экспериментов, поражающих по своей масштабности и грандиозности. Мы вынуждены отталкиваться от того, что консультация с широким активом.',
+      workshop: 'Мастерская',
+      all_rights_reserved: 'All rights reserved',
+      artists: "Художники",
+      managers: 'Менеджеры',
     },
     // en: {
     //   _home: "Home",
