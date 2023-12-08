@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.scss';
-
+import LocalizedStrings from '../../app/localization';
 import { painting, Country } from '#src/types/painting';
 
 type Props = {
@@ -19,23 +19,30 @@ const CartArt: React.FunctionComponent<Props> = ({
   return (
     <>
       <div className='cart__container'>
-        <img src={imgSrc} alt={title} />
 
-        <p className='cart__container__artist'>
-          {artistName}
-        </p>
-        <p className='cart__container__painting_title'>
-          {title}
-        </p>
-        <p className='cart__container__painting_description'>
-          {description}
-        </p>
-        <p className='cart__container__painting_price'>
-          {price}&nbsp;{currency}
-        </p>
+        <figure>
+          <img src={imgSrc} alt={title} />
+          <figcaption>
+            <p className='cart__container__artist'>
+              {artistName}
+            </p>
+            <p className='cart__container__painting_title'>
+              {title}
+            </p>
+            <p className='cart__container__painting_description'>
+              {description}
+            </p>
+            <p className='cart__container__painting_price'>
+              {price}&nbsp;{currency}
+            </p>
+
+          </figcaption>
+        </figure>
+        
+
+        
         <button>
-          {/* {LocalizedStrings.add_to_cart} */}
-          TODO LocalizedStrings
+          {LocalizedStrings.add_to_cart}
         </button>
       </div>
     </>

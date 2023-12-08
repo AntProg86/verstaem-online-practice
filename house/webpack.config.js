@@ -22,7 +22,13 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    //preferRelative: true,
+    // alias: {
+    //   data: path.resolve(__dirname, 'src/data/'),
+    //   assets: path.resolve(__dirname, 'src/assets/'),
+    //   zxc$: path.resolve(__dirname, 'src/assets/'),
+    // },
   },
   plugins: [
     new HtmlWebpackPlugin({

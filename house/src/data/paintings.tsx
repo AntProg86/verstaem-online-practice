@@ -1,4 +1,9 @@
-import { painting, Country } from "#src/types/painting";
+import { painting, Country } from "../types/painting";
+
+export const getPaintingsByCountry = (country: Country) => {
+  let _pain = paintings.filter(p => p.country === country )
+  return _pain;
+}
 
 export const paintings:Array<painting> = [
   {
@@ -142,7 +147,7 @@ export const paintings:Array<painting> = [
     description: 'Цветная литография (40х60)',
     currency: 'руб',
     price: 15500,
-    imgSrc: require('../assets/gallery/.jpg'),
+    imgSrc: require('../assets/gallery/WhiteParrot.jpg'),
     country: Country.ENGLAND
   },
   {
