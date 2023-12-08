@@ -9,22 +9,33 @@ import './styles.scss';
 import {Logo, Cart, F, P, Play} from '../assets/svg';
 import {Star, Group, Pigeon,
   human_1, human_2, human_3} from '../assets/pictures';
-//import CartArt from '#components/cart-art';
 
 import CartArt from '../components/cart-art';
-import { painting } from '#src/types/painting';
+import { painting, Country } from '../types/painting';
+
+import {getPaintingsByCountry} from '../data/paintings';
 
 //import ASD from '../assets/Star.png'
 
+type State = {
+  paintings : Array<painting>
+};
+
+const initState = {
+  paintings: getPaintingsByCountry(Country.FRANCE),
+};
+
 type Props = {
 
-}
+};
 
 const Application: React.FunctionComponent<Props> = () => {
 
-  //const Diamond = require('../assets/gallery/zxc.jpg');
+  const [state, changeState] = useState<State>(initState);
   
-  // const Logo = require('../assets/logo.svg');
+  //const Diamond = require('../assets/gallery/zxc.jpg');
+  //const Logo = require('../assets/logo.svg');
+  //const asd = getPaintingsByCountry(Country.FRANCE);
   
   return (
     <>
@@ -68,8 +79,22 @@ const Application: React.FunctionComponent<Props> = () => {
         </section>
 
         <section className='carts'>
-          carts
-          &#128386;
+          {state.paintings.map((p)=>{
+            return(
+              <CartArt
+                artistName={p.artistName}
+                country={p.country}
+                currency={p.currency}
+                description={p.description}
+                price={p.price}
+                title={p.title}
+                imgSrc={p.imgSrc}
+              />
+            )
+          })}
+          
+          {/* carts
+          &#128386; */}
           {/* <img src={Diamond} alt="zxc" /> */}
           
         </section>
@@ -116,25 +141,33 @@ const Application: React.FunctionComponent<Props> = () => {
           <div className='footer__container'>
             <div className='footer__container__col-1'>
               <Logo/>
-              <p>+7 (999) 543-54-54</p>
-              <p>{LocalizedStrings.workshop}</p>
+              <span>+7 (999) 543-54-54</span>
+              <ul>
+                <li>{LocalizedStrings.workshop}</li>
+              </ul>
             </div>
             <div className='footer__container__col-2'>
               <div>
                 <p>{LocalizedStrings.Reproductions}</p>
-                <p>{LocalizedStrings.france}</p>
-                <p>{LocalizedStrings.germany}</p>
-                <p>{LocalizedStrings.england}</p>
+                <ul>
+                  <li>{LocalizedStrings.france}</li>
+                  <li>{LocalizedStrings.germany}</li>
+                  <li>{LocalizedStrings.england}</li>
+                </ul>
               </div>
               <div>
                 <p>{LocalizedStrings.new_items}</p>
-                <p>2021</p>
-                <p>2020</p>
+                <ul>
+                  <li>2021</li>
+                  <li>2020</li>
+                </ul>
               </div>
               <div>
                 <p>{LocalizedStrings._about}</p>
-                <p>{LocalizedStrings.artists}</p>
-                <p>{LocalizedStrings.managers}</p>
+                <ul>
+                  <li>{LocalizedStrings.artists}</li>
+                  <li>{LocalizedStrings.managers}</li>
+                </ul>
               </div>
 
             </div>
@@ -144,10 +177,10 @@ const Application: React.FunctionComponent<Props> = () => {
                 <P/>
                 <Play/>
               </div>
-              <div>
-                <p>{LocalizedStrings.ink_house}&reg;</p>
-                <p>{LocalizedStrings.all_rights_reserved}</p>
-              </div>
+              <ul>
+                <li>{LocalizedStrings.ink_house}&reg;</li>
+                <li>{LocalizedStrings.all_rights_reserved}</li>
+              </ul>
             </div>
 
           </div>

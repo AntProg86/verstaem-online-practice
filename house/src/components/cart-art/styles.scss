@@ -1,0 +1,47 @@
+
+.cart__container {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #E1EDE6;
+  margin-bottom: 30px;
+}
+
+.cart__container figure {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cart__container button {
+  padding: 20px 60px;
+  border: 1px solid #598D66;
+  color: #598D66;
+  margin: 20px;
+  background: inherit;
+  font-size: 20px;
+}
+
+.cart__container__artist {
+  color: #86928B;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.cart__container__painting_title {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.cart__container__painting_description {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.cart__container__painting_price {
+  color: #598D66;
+  font-size: 24px;
+  margin-top: 28px;
+}
