@@ -1,11 +1,19 @@
 import React, { useEffect, useContext, useState} from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
-//import './styles.css';
+
 import LocalizedStrings from './localization';
 import { Link, Route, Routes } from 'react-router-dom';
-//import '../../src/re'
 import './reset.scss';
+
 import './styles.scss';
+import {Logo, Cart, F, P, Play} from '../assets/svg';
+import {Star, Group, Pigeon,
+  human_1, human_2, human_3} from '../assets/pictures';
+
+// import CartArt from '../components/cart-art';
+// import { painting, Country } from '../types/painting';
+
+// import {getPaintingsByCountry} from '../data/paintings';
 
 type Props = {
 
@@ -14,40 +22,45 @@ type Props = {
 const Application: React.FunctionComponent<Props> = () => {
 
   return (
-    <div className="">
-      <div>
-      <div>
-        <hr />
-        <nav>
-          <ul>
-            <div className=''>
+    <>
+      <header>
+        <section className='top-nav'>
+          <div className='logo'>
+            <Logo/>
+          </div>
+          <div className='top-nav__col-2'>
+            <input id="menu-toggle" type="checkbox"/>
+            <label className='menu-button-container' htmlFor="menu-toggle">
+              <div className='menu-button'></div>
+            </label>
+            <ul className="menu">
+              <li><a href="#">{LocalizedStrings.reproductions}</a></li>
+              <li><a href="#">{LocalizedStrings.new_items}</a></li>
+              <li><a href="#">{LocalizedStrings._about}</a></li>
+            </ul>
+            <Cart/>
+          </div>
+        </section>
+      </header>
 
-              <li>
-                {/* <Link to="/">{LocalizedStrings._home}</Link> */}
-                <Link to="/">{LocalizedStrings._home}</Link>
-              </li>
-              &nbsp;||&nbsp;
-              <li>
-                {/* <Link to="/about">{LocalizedStrings._about}</Link> */}
-                <Link to="/about">{LocalizedStrings._about}</Link>
-              </li>
-              &nbsp;||&nbsp;
-              <li>
-              </li>
-            </div>
-          </ul>
-        </nav>
-        <hr />
-        <Routes>
-          <Route path={ "/" } element={ <>main page</> } />
-          <Route path={ "/about" } element={ <>AboutPage</> } />
-
-          {/* Перенаправление на главную страницу, если вызванной не существует */}
-          <Route path='*' element={ <>main page</> }/>
-        </Routes>
-      </div>
-      </div>
-    </div>
+      <main>
+        <section className='replica'>
+          replica
+        </section>
+        <section className='reproductions'>
+          reproductions
+        </section>
+        <section className='advertising'>
+          advertising
+        </section>
+        <section className='our-team'>
+          our-team
+        </section>
+        <footer>
+          footer
+        </footer>
+      </main>
+    </>
   );
 };
     
