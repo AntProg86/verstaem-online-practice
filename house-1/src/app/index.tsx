@@ -45,7 +45,21 @@ const Application: React.FunctionComponent<Props> = () => {
 
       <main>
         <section className='replica'>
-          replica
+          <figure>
+            <img src={Pigeon} alt="Pigeon" />
+          </figure>
+          <div>
+            <h1>
+              {LocalizedStrings.replica_paintings}&nbsp;
+              <div>
+                {LocalizedStrings.ink_house}
+              </div>
+            </h1>
+            <p>{LocalizedStrings.paragraph_1}</p>
+            <button className='replica__btn'>
+              {LocalizedStrings.products}
+            </button>
+          </div>
         </section>
         <section className='reproductions'>
           reproductions
