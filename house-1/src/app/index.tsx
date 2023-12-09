@@ -62,7 +62,12 @@ const Application: React.FunctionComponent<Props> = () => {
           </div>
         </section>
         <section className='reproductions'>
-          reproductions
+          <h2>{LocalizedStrings.reproductions}</h2>
+          <div>
+            <button>{LocalizedStrings.france}</button>
+            <button>{LocalizedStrings.germany}</button>
+            <button>{LocalizedStrings.england}</button>
+          </div>
         </section>
         <section className='advertising'>
           advertising

@@ -316,17 +316,54 @@ header{
 
 /*#endregion Replica*/
 
-.reproductions{
-  background: yellow;
+/*#region Reproductions*/
+.reproductions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+.reproductions h2 {
+  font-size: 40px;
+}
+
+.reproductions button {
+  background-color: #D4E8D9;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  margin-right: 10px;
+  border: 0px;
+}
+
+.reproductions button:hover{
+  border-radius: 20px;
+  background: #598D66;
+}
+.reproductions button:focus {
+  border-radius: 20px;
+  border: 2px solid #598D66;
+  background: #D4E8D9;
+}
+.reproductions button:active {
+  border-radius: 20px;
+  background: #376B44;
 }
 
 @media (max-width: 689px) {
-
+  .reproductions {
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .reproductions h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 509px) {
   
 }
+/*#endregion Reproductions*/
 
 .advertising{
   background: greenyellow;
