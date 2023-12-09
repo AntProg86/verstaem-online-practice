@@ -25,7 +25,13 @@ main {
 }
 main section {
   max-width: var(--max-width);
-  width: 100%;
+  width: 95%;
+}
+
+@media (max-width: 509px) {
+  main section {
+    width: 95%;
+  }
 }
 
 /*#region Header*/
@@ -225,12 +231,101 @@ header{
 /*#endregion Header*/
 
 /*#region Sections */
+
+/*#region Replica*/
+
 .replica {
-  background: aqua;
+  //background: aqua;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.replica figure {
+  width: 50%;
+}
+.replica div {
+  width: 50%;
+}
+
+.replica h1 {
+  font-size: 30px;
+}
+
+.replica h1 div {
+  color: var(--company-name-color);
+}
+
+.replica p {
+  color: var(--text-color);
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.replica img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+.replica__btn {
+  border: 1px solid;
+  padding: 20px 60px 20px 60px;
+  border-color: #598D66;
+  background-color: white;
+  margin-top: 40px;
+  color: #598D66;
+}
+
+.replica__btn:hover {
+  background: #598D66;
+  color: white;
+}
+.replica__btn:focus {
+  border: 1px solid #598D66;
+  background: #D4E8D9;
+}
+.replica__btn:active {
+  background: #376B44;
+}
+
+@media (max-width: 689px) {
+  .replica{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 509px) {
+  .replica{
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .replica figure {
+    visibility: hidden;
+    width: 0%;
+  }
+  .replica div {
+    width: 100%;
+  }
+}
+
+/*#endregion Replica*/
 
 .reproductions{
   background: yellow;
+}
+
+@media (max-width: 689px) {
+
+}
+
+@media (max-width: 509px) {
+  
 }
 
 .advertising{
@@ -238,8 +333,24 @@ header{
   max-width: 100vw;
 }
 
+@media (max-width: 689px) {
+
+}
+
+@media (max-width: 509px) {
+
+}
+
 .our-team{
   background: green;
+}
+
+@media (max-width: 689px) {
+
+}
+
+@media (max-width: 509px) {
+
 }
 /*#endregion Sections */
 
@@ -247,4 +358,12 @@ footer{
   background: brown;
   width: 100%;
   max-width: 100vw;
+}
+
+@media (max-width: 689px) {
+
+}
+
+@media (max-width: 509px) {
+
 }
