@@ -4,7 +4,9 @@ a {
 }
 
 :root {
-  --desktop-max-width: 768px;
+  --desktop-max-width: 1110px;
+  --tablet-max-width: 1110px;
+  --tablet-margin-section: 33px 0px 33px 0px;
   --company-name-color: #598D66;
   --text-color: #86928B;
 }
@@ -14,28 +16,163 @@ body {
   min-height: 100vh;
 }
 
-/*#region header*/
-header{
-  background: #E1EDE6;
+/*#region menu*/
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  //background-color: #00BAF0;
+  //background: linear-gradient(to left, #f46b45, #eea849);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  //color: #FFF;
   height: 100px;
+  //padding: 1em;
+  max-width: var(--desktop-max-width);
   width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+/*#endregion menu*/
+
+/*#region*/
+@media (max-width: 320px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 100px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    //color: white;
+    background-color: #E1EDE6;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+@media (max-width:510px) {
+  .top-nav {
+    flex-direction: column;
+    margin-right: 33px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .logo {
+    border-bottom: 1px solid #C3D1C6;
+    width: 100%;
+    vertical-align: center;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+  header {
+    //margin: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width:450px) {
+  
+}
+/*#endregion*/
+
+
+/*#region header*/
+header {
+  background-color: #E1EDE6;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-}
-
-header div {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
   width: 100%;
-  max-width: var(--desktop-max-width);
-}
 
-header nav  {
-  display: flex;
-  gap: 60px;
 }
 /*#endregion header*/
 
@@ -48,6 +185,13 @@ header nav  {
   align-items: center;
   margin: 0 auto;
   max-width: var(--desktop-max-width);
+}
+
+.replica figure {
+  width: 40%;
+}
+.replica div {
+  width: 60%;
 }
 
 .replica h1 {
@@ -79,6 +223,11 @@ header nav  {
   color: #598D66;
 }
 
+@media (max-width:510px) {
+
+}
+
+
 /*reproductions*/
 .reproductions {
   display: flex;
@@ -107,6 +256,16 @@ header nav  {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+@media (max-width:510px) {
+  .reproductions {
+    margin: var(--tablet-margin-section);
+    margin-top: 50px;
+    flex-direction: column;
+    justify-content: center;
+
+  }
 }
 
 /*advertising*/
@@ -166,6 +325,7 @@ header nav  {
   margin: 0 auto;
   max-width: var(--desktop-max-width);
   margin-top: 70px;
+  margin-bottom: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;

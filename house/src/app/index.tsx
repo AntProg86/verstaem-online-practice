@@ -40,20 +40,30 @@ const Application: React.FunctionComponent<Props> = () => {
   return (
     <>
       <header>
-        <div>
-          <Logo/>
-          <nav>
-            <a href="#">{LocalizedStrings.reproductions}</a>
-            <a href="#">{LocalizedStrings.new_items}</a>
-            <a href="#">{LocalizedStrings._about}</a>
-            <Cart/>
-          </nav>
-        </div>
+        <section className='top-nav'>
+          <div className='logo'>
+            <Logo/>
+          </div>
+          <div>
+            <input id="menu-toggle" type="checkbox"/>
+            <label className='menu-button-container' htmlFor="menu-toggle">
+              <div className='menu-button'></div>
+            </label>
+            <ul className="menu">
+              <li><a href="#">{LocalizedStrings.reproductions}</a></li>
+              <li><a href="#">{LocalizedStrings.new_items}</a></li>
+              <li><a href="#">{LocalizedStrings._about}</a></li>
+              <li><Cart/></li>
+            </ul>
+          </div>
+        </section>
       </header>
       
       <main>
         <section className='replica'>
-          <img src={Pigeon} alt="Pigeon" />
+          <figure>
+            <img src={Pigeon} alt="Pigeon" />
+          </figure>
           <div>
             <h1>
               {LocalizedStrings.replica_paintings}&nbsp;
@@ -71,7 +81,6 @@ const Application: React.FunctionComponent<Props> = () => {
         <section className='reproductions'>
           <h2>{LocalizedStrings.reproductions}</h2>
           <div>
-
             <button>{LocalizedStrings.france}</button>
             <button>{LocalizedStrings.germany}</button>
             <button>{LocalizedStrings.england}</button>
