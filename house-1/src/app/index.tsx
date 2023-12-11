@@ -31,6 +31,13 @@ const Application: React.FunctionComponent<Props> = () => {
 
   const [state, changeState] = useState<State>(initState);
 
+  const changeCountry = (country:Country) => {
+    changeState((state) => ({
+      ...state,
+      paintings: getPaintingsByCountry(country),
+    }))
+  }
+  
   return (
     <>
       <header>
@@ -74,13 +81,19 @@ const Application: React.FunctionComponent<Props> = () => {
         <section className='reproductions'>
           <h2>{LocalizedStrings.reproductions}</h2>
           <div>
-            <button>{LocalizedStrings.france}</button>
-            <button>{LocalizedStrings.germany}</button>
-            <button>{LocalizedStrings.england}</button>
+            <button onClick={()=>{changeCountry(Country.FRANCE)}}>
+              {LocalizedStrings.france}
+            </button>
+            <button onClick={()=>{changeCountry(Country.GERMANY)}}>
+              {LocalizedStrings.germany}
+              </button>
+            <button onClick={()=>{changeCountry(Country.ENGLAND)}}>
+              {LocalizedStrings.england}
+            </button>
           </div>
         </section>
         <section className='carts'>
-          {/* {state.paintings.map((p)=>{
+          {state.paintings.map((p)=>{
             return(
               <CartArt
                 artistName={p.artistName}
@@ -92,7 +105,7 @@ const Application: React.FunctionComponent<Props> = () => {
                 imgSrc={p.imgSrc}
               />
             )
-          })} */}
+          })}
         </section>
         <section className='advertising'>
           <div className='advertising__container'>
@@ -128,7 +141,53 @@ const Application: React.FunctionComponent<Props> = () => {
           </div>
         </section>
         <footer>
-          footer
+          <div className='footer__container'>
+            <div className='footer__container__col-1'>
+              <Logo/>
+              <ul>
+                <span>+7 (999) 543-54-54</span>
+                <li>{LocalizedStrings.workshop}</li>
+              </ul>
+            </div>
+            <div className='footer__container__col-2'>
+              <div className='footer__container__col-2__links'>
+                <div>
+                    <p>{LocalizedStrings.Reproductions}</p>
+                    <ul>
+                      <li>{LocalizedStrings.france}</li>
+                      <li>{LocalizedStrings.germany}</li>
+                      <li>{LocalizedStrings.england}</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>{LocalizedStrings.new_items}</p>
+                    <ul>
+                      <li>2021</li>
+                      <li>2020</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>{LocalizedStrings._about}</p>
+                    <ul>
+                      <li>{LocalizedStrings.artists}</li>
+                      <li>{LocalizedStrings.managers}</li>
+                    </ul>
+                  </div>
+              </div>
+              <div className='footer__container__col-2__info'>
+                <div>
+                  <F/>
+                  <P/>
+                  <Play/>
+                </div>
+                <ul>
+                  <li>{LocalizedStrings.ink_house}&reg;</li>
+                  <li>{LocalizedStrings.all_rights_reserved}</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
         </footer>
       </main>
     </>
