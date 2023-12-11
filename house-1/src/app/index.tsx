@@ -80,7 +80,7 @@ const Application: React.FunctionComponent<Props> = () => {
           </div>
         </section>
         <section className='carts'>
-          {state.paintings.map((p)=>{
+          {/* {state.paintings.map((p)=>{
             return(
               <CartArt
                 artistName={p.artistName}
@@ -92,13 +92,40 @@ const Application: React.FunctionComponent<Props> = () => {
                 imgSrc={p.imgSrc}
               />
             )
-          })}
+          })} */}
         </section>
         <section className='advertising'>
-          advertising
+          <div className='advertising__container'>
+            <div className='advertising__container__header'>
+              <img src={Star} alt="Star" />
+              <h3>{LocalizedStrings.new_coll}</h3>
+            </div>
+            <div className='advertising__container__content'>
+              <p>{LocalizedStrings.advertising_p_1}</p>
+              <p>{LocalizedStrings.advertising_p_2}</p>
+              <div>
+                <button>
+                  {LocalizedStrings.familiarize}
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
         <section className='our-team'>
-          our-team
+        <div className='our-team_1__col-1'>
+            <img src={Group} alt="Group" />
+          </div>
+          <div className='our-team_1__col_2'>
+            <div className='our-team__desc'>
+              <h5>{LocalizedStrings.our_team}</h5>
+              <p>{LocalizedStrings.our_team_p_1}</p>
+              <div>
+                <img src={human_1} alt="human_1" />
+                <img src={human_2} alt="human_2" />
+                <img src={human_3} alt="human_3" />
+              </div>
+            </div>
+          </div>
         </section>
         <footer>
           footer
