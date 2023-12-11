@@ -365,6 +365,15 @@ header{
 }
 /*#endregion Reproductions*/
 
+/*#region Carts*/
+.carts {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/*#endregion Carts*/
+
 .advertising{
   background: greenyellow;
   max-width: 100vw;

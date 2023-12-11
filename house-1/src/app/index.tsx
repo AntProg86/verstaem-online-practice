@@ -10,16 +10,26 @@ import {Logo, Cart, F, P, Play} from '../assets/svg';
 import {Star, Group, Pigeon,
   human_1, human_2, human_3} from '../assets/pictures';
 
-// import CartArt from '../components/cart-art';
-// import { painting, Country } from '../types/painting';
+import CartArt from '../components/cart-art';
+import { painting, Country } from '../types/painting';
 
-// import {getPaintingsByCountry} from '../data/paintings';
+import {getPaintingsByCountry} from '../data/paintings';
+
+type State = {
+  paintings : Array<painting>
+};
+
+const initState = {
+  paintings: getPaintingsByCountry(Country.FRANCE),
+};
 
 type Props = {
 
 }
 
 const Application: React.FunctionComponent<Props> = () => {
+
+  const [state, changeState] = useState<State>(initState);
 
   return (
     <>
@@ -68,6 +78,21 @@ const Application: React.FunctionComponent<Props> = () => {
             <button>{LocalizedStrings.germany}</button>
             <button>{LocalizedStrings.england}</button>
           </div>
+        </section>
+        <section className='carts'>
+          {state.paintings.map((p)=>{
+            return(
+              <CartArt
+                artistName={p.artistName}
+                country={p.country}
+                currency={p.currency}
+                description={p.description}
+                price={p.price}
+                title={p.title}
+                imgSrc={p.imgSrc}
+              />
+            )
+          })}
         </section>
         <section className='advertising'>
           advertising
