@@ -151,7 +151,7 @@ const Application: React.FunctionComponent<Props> = () => {
             </div>
             <div className='footer__container__col-2'>
               <div className='footer__container__col-2__links'>
-                <div>
+                  <div>
                     <p>{LocalizedStrings.Reproductions}</p>
                     <ul>
                       <li>{LocalizedStrings.france}</li>

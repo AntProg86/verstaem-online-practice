@@ -4,8 +4,6 @@ a {
   color: black;
 }
 
-
-
 :root {
   --extra-small-devices-phones: 575px
   --small-devices-tablets: 576px
@@ -694,6 +692,10 @@ footer{
   }
   .footer__container__col-2__links {
     justify-content: space-around;
+    flex-direction: column;
+  }
+  .footer__container__col-2__links div {
+    margin-top: 10px;
   }
   .footer__container__col-2__info {
     width: 100%;

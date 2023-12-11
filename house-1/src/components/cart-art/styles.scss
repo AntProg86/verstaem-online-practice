@@ -45,3 +45,25 @@
   font-size: 24px;
   margin-top: 28px;
 }
+
+@media (max-width: 734px) {
+  .cart__container {
+    max-width: 240px;
+  }
+  .cart__container button {
+    font-size: 18px;
+  }
+  .cart__container__artist {
+    font-size: 16px;
+  }
+  .cart__container__painting_title {
+    font-size: 24px;
+  }
+  .cart__container__painting_description{
+    font-size: 16px;
+  }
+  .cart__container__painting_price{
+    font-size: 20px;
+  }
+  
+}
